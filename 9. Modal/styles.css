@@ -1,0 +1,73 @@
+*::after, *::before, * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.open-button {
+    margin: 40px;
+    width: 150px;
+    height: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 2px solid black;
+}
+
+.modal .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal .close-button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.modal .modal-body {
+    padding: 20px 30px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .75);
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
